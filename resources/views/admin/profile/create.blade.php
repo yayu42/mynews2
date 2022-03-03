@@ -36,8 +36,7 @@
                           <option value="2">女性</option>
                           <option value="3">どちらでもない</option>
                           </select>
-                            
-                        </div>
+                           </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">趣　味</label>
