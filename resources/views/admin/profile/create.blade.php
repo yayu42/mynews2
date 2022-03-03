@@ -29,7 +29,7 @@
                              <form_method="post" action="receive.php">
                                <label class="col-md-10">性　別</label>
                                     <div class="col-md-20">
-                                         <select name="gender">
+                                         <select name="gender">{{ old('gender') }}
                                              <option hidden>選択してください</option>
                                              <option value="1">男性</option>
                                              <option value="2">女性</option>
