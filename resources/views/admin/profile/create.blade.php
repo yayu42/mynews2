@@ -25,19 +25,18 @@
                             <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                         </div>
                     </div>
-                    <div class="form-group row">
-                     <form_method="post" action="receive.php">
-                      
-                        <label class="col-md-2">性　別</label>
-                        <div class="col-md-10">
-                         <select name="gender">
-                          <option hidden>選択してください</option>
-                          <option value="1">男性</option>
-                          <option value="2">女性</option>
-                          <option value="3">どちらでもない</option>
-                          </select>
-                           </div>
-                    </div>
+                        <div class="form-group row">
+                             <form_method="post" action="receive.php">
+                               <label class="col-md-10">性　別</label>
+                                    <div class="col-md-20">
+                                         <select name="gender">
+                                             <option hidden>選択してください</option>
+                                             <option value="1">男性</option>
+                                             <option value="2">女性</option>
+                                             <option value="3">どちらでもない</option>
+                                        </select>
+                                 </div>
+                          </div>
                     <div class="form-group row">
                         <label class="col-md-2">趣　味</label>
                         <div class="col-md-10">
