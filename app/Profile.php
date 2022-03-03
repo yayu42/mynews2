@@ -11,8 +11,9 @@ class Profile extends Model
     
     public static $rules = array(
         'title' => 'required',
-        'gender'=> 'required',
+        'gender' => 'required',
         'body' => 'required',
+        'main' => 'required',
     );
 }
 

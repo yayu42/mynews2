@@ -29,7 +29,7 @@
                              <form_method="post" action="receive.php">
                                <label class="col-md-10">性　別</label>
                                     <div class="col-md-20">
-                                         <select name="gender">{{ old('gender') }}
+                                         <select name="gender" class="form-control">
                                              <option hidden>選択してください</option>
                                              <option value="1">男性</option>
                                              <option value="2">女性</option>
@@ -46,11 +46,11 @@
                     <div class="form-group row">
                         <label class="col-md-2">自己紹介欄</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="main" rows="20">{{ old('main') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">画像</label>
+                        <label class="col-md-2">画 像</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                         </div>
