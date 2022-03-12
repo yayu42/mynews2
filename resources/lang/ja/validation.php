@@ -147,9 +147,10 @@ return [
     */
 
     'attributes' => [
-        'title' => '氏　名',
-        'body' => '趣　味',
-        'main' => '自己紹介欄',
+        'name' => '氏　名',
+        'gender' => '性　別',
+        'hobby' => '趣　味',
+        'introduction' => '自己紹介欄',
         ],
 
 ];
