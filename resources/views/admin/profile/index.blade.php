@@ -31,17 +31,19 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
-                                <th width="20%">氏　名</th>
-                                <th width="50%">自己紹介</th>
+                                <th width="10%">氏　名</th>
+                                <th width="10%">性　別</th>
+                                <th width="30%">趣　味</th>
+                                <th width="30%">自己紹介</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $profile)
                                 <tr>
-                                    <th>{{ $profile->id }}</th>
-                                    <td>{{ \Str::limit($profile->title, 100) }}</td>
-                                    <td>{{ \Str::limit($profile->body, 250) }}</td>
+                                    <th>{{ \Str::limit($profile->name, 100) }}</th>
+                                    <td>{{ \Str::limit($profile->gender, 100) }}</td>
+                                    <td>{{ \Str::limit($profile->hobby, 250) }}</td>
+                                    <td>{{ \Str::limit($profile->introduction, 250) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id]) }}">編集</a>

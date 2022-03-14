@@ -25,7 +25,7 @@
                               <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
-                        <div class="form-group row">
+                      <div class="form-group row">
                              <form_method="post" action="receive.php">
                                <label class="col-md-10">性　別</label>
                                     <div class="col-md-20">

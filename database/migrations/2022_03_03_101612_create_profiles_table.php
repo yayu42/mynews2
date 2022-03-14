@@ -18,7 +18,8 @@ class CreateProfilesTable extends Migration
             $table->string('name');
             $table->string('gender');
             $table->string('hobby');
-            $table->string('introduction')->nullable();
+            $table->string('introduction')
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }
