@@ -1,4 +1,4 @@
- {{-- layouts/profle.blade.phpを読み込む --}}
+{{-- layouts/profle.blade.phpを読み込む --}}
        @extends('layouts.profile')
        
        {{--profile.blade.phpの@yield('title)に'Myプロフィール'を埋め込む --}}
@@ -19,10 +19,10 @@
                             @endforeach
                         </ul>
                     @endif
-                    <div class="form-group row">
+                     <div class="form-group row">
                         <label class="col-md-2">氏　名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                              <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
                         <div class="form-group row">
@@ -40,13 +40,13 @@
                     <div class="form-group row">
                         <label class="col-md-2">趣　味</label>
                         <div class="col-md-10">
-                         <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                         <textarea class="form-control" name="hobby" rows="5">{{ old('hobby') }}</textarea>
                           </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">自己紹介欄</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="main" rows="20">{{ old('main') }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -62,4 +62,3 @@
         </div>
     </div>
 @endsection
-               
