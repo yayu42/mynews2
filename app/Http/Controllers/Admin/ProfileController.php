@@ -38,7 +38,7 @@ class ProfileController extends Controller
       
       //データベースに保存する
       $profile->fill($form);
-      $profile->seve();
+      $profile->save();
       
 
         return redirect('admin/profile/create');
@@ -76,7 +76,7 @@ class ProfileController extends Controller
       $profile = Profile::find($request->id);
       // 送信されてきたフォームデータを格納する
       $profile_form = $request->all();
-      if (request->remove == 'true') {
+      if ($request->remove == 'true') {
           $profile_form['image_path'] = null;
       } elseif ($request->file('image')) {
           $path = $request->file('image')->store('public/image');
@@ -90,15 +90,20 @@ class ProfileController extends Controller
       unset($profile_form['_token']);
 
       // 該当するデータを上書きして保存する
-      $news->fill($profile_form)->save();
-
-      return redirect('admin/profile');
+      $profile->fill($profile_form)->save();
+      
+     $history = new ProfileHistory();
+        $history->profile_id = $profile->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
+      
+      return redirect('admin/profile/');
       
 }
 
 public function delete(Request $request)
   {
-      // 該当するNews Modelを取得
+      // 該当するProfile Modelを取得
       $profile = Profile::find($request->id);
       // 削除する
       $profile->delete();
