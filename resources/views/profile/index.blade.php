@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.profilefront')
 
 @section('content')
     <div class="container">
@@ -15,12 +15,18 @@
                                     @endif
                                 </div>
                                 <div class="title p-2">
-                                    <h1>{{ \Str::limit($headline->title, 70) }}</h1>
+                                    <h1>{{ \Str::limit($headline->name, 70) }}</h1>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <p class="body mx-auto">{{ \Str::limit($headline->body, 650) }}</p>
+                            <p class="body mx-auto">{{\Str::limit($headline->gender, 150) }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="body mx-auto">{{\Str::limit($headline->hobby, 150) }}</p>
+                            </div>
+                        <div class="col-md-6">
+                            <p class="body mx-auto">{{ \Str::limit($headline->introduction, 150) }}</p>
                         </div>
                     </div>
                 </div>
