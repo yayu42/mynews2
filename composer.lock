@@ -6587,7 +6587,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.3"
+                "php": "^7.2 || ~8.0.0"
             },
             "type": "library",
             "extra": {
