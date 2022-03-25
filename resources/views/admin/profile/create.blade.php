@@ -26,15 +26,10 @@
                         </div>
                     </div>
                      <div class="form-group row">
-                    <form_method="post" action="receive.php">
-                      <label class="col-md-10">性　別</label>
-                         <div class="col-md-10">
-                       　　  <select name="gender" class="form-control">
-                            <option hidden>選択してください</option>
-                            <option value="男性">男性</option>
-                            <option value="女性">女性</option>
-                            <option value="どちらでもない">どちらでもない</option>
-                        </select>
+                      <label class="col-md-10"　for="gender">性　別</label>
+                            <input type="radio" name="gender" value="女性">女 性
+                            <input type="radio" name="gender" value="男性">男 性
+                            <input type="radio" name="gender" value="どちらでもない">どちらでもない
                       </div>
                     <div class="form-group row">
                         <label class="col-md-2">趣　味</label>
