@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container">
-        <hr color="#c0c0c0">
+          <hr color="#b7aed6">
         @if (!is_null($headline))
             <div class="row">
-                <div class="headline col-md-10 mx-auto">
+                <div class="headline col-md-15 mx-auto">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="caption mx-auto">
@@ -14,7 +14,8 @@
                                         <img src="{{ asset('storage/image/' . $headline->image_path) }}">
                                     @endif
                                 </div>
-                                <div class="title p-2">
+                                
+                                <div class="title p-2" background-color="#ff8c00">
                                     <h1>{{ \Str::limit($headline->name, 70) }}</h1>
                                 </div>
                             </div>
@@ -32,7 +33,7 @@
                 </div>
             </div>
         @endif
-        <hr color="#c0c0c0">
+        <hr color="#b7aed6">
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
                 @foreach($posts as $post)
