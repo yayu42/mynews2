@@ -26,10 +26,10 @@
                         </div>
                     </div>
                      <div class="form-group row">
-                      <label class="col-md-10"　for="gender">性　別</label>
-                            <input type="radio" name="gender" value="女性">女 性
-                            <input type="radio" name="gender" value="男性">男 性
-                            <input type="radio" name="gender" value="どちらでもない">どちらでもない
+                     <label class="col-md-10"　for="gender">性　別</label>
+                     <input type="radio" name="gender" value="女性">女 性
+                     <input type="radio" name="gender" value="男性">男 性
+                     <input type="radio" name="gender" value="どちらでもない">どちらでもない
                       </div>
                     <div class="form-group row">
                         <label class="col-md-2">趣　味</label>
