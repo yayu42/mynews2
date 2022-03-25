@@ -4,6 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <body bgcolor="#fabea7">
             <h2>プロフィール一覧</h2>
         </div>
         <div class="row">
