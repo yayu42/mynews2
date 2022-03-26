@@ -22,9 +22,9 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="gender">性　別</label>
-                        <input type="radio" name="gender" value="{{ $profile_form->gender}}">女　性
-                        <input type="radio" name="gender" value="{{ $profile_form->gender}}">男　性
-                        <input type="radio" name="gender" value="{{ $profile_form->gender}}">どちらでもない
+                        <input type="radio" name="gender" value="1">女　性
+                        <input type="radio" name="gender" value="2">男　性
+                        <input type="radio" name="gender" value="3">どちらでもない
                     </div>    
                     <div class="form-group row">
                         <label class="col-md-2" for="hobby">趣 味</label>
