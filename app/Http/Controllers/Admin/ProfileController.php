@@ -25,7 +25,7 @@ class ProfileController extends Controller
       $profile = new Profile;
       $profile_form = $request->all();
       
-      if (isset($form['image'])) {
+      if (isset($profile_form['image'])) {
           $path = Storage::disk('s3')->putFile('/',$profile_form['image'],'public');
           $profile->image_path = Storage::disk('s3')->url($path);
       } else {
