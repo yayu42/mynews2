@@ -26,7 +26,7 @@ class ProfileController extends Controller
       $form = $request->all();
       
       if (isset($form['image'])) {
-          $path = Storage::disk('s3')->putFile('/',$news_form['image'],'public');
+          $path = Storage::disk('s3')->putFile('/',$profile_form['image'],'public');
           $profile->image_path = Storage::disk('s3')->url($path);
       } else {
           $profile->image_path = null;
@@ -84,6 +84,7 @@ class ProfileController extends Controller
           $profile_form['image_path'] = Storage::disk('s3')->url($path);
       } else {
           $profile_form['image_path'] = $profile->image_path;
+      }
       
       unset($profile_form['image']);
       unset($profile_form['remove']);
