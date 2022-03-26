@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Profile;
 use App\ProfileHistory;
 use Carbon\Carbon;
+use Storage;
 
 class ProfileController extends Controller
 {
@@ -25,8 +26,8 @@ class ProfileController extends Controller
       $form = $request->all();
       
       if (isset($form['image'])) {
-          $path = $request->file('image')->store('public/image');
-          $profile->image_path = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$news_form['image'],'public');
+          $profile->image_path = Storage::disk('s3')->url($path);
       } else {
           $profile->image_path = null;
       }
@@ -79,11 +80,10 @@ class ProfileController extends Controller
       if ($request->remove == 'true') {
           $profile_form['image_path'] = null;
       } elseif ($request->file('image')) {
-          $path = $request->file('image')->store('public/image');
-          $profile_form['image_path'] = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$profile_form['image'],'public');
+          $profile_form['image_path'] = Storage::disk('s3')->url($path);
       } else {
           $profile_form['image_path'] = $profile->image_path;
-      }
       
       unset($profile_form['image']);
       unset($profile_form['remove']);
