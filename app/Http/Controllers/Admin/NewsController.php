@@ -24,7 +24,7 @@ class NewsController extends Controller
       $this->validate($request, News::$rules);
 
       $news = new News;
-      $form = $request->all();
+      $news_form = $request->all();
 
       // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
       if (isset($form['image'])) {
@@ -35,12 +35,12 @@ class NewsController extends Controller
       }
 
       // フォームから送信されてきた_tokenを削除する
-      unset($form['_token']);
+      unset($news_form['_token']);
       // フォームから送信されてきたimageを削除する
-      unset($form['image']);
+      unset($news_form['image']);
 
       // データベースに保存する
-      $news->fill($form);
+      $news->fill($news_form);
       $news->save();
 
       return redirect('admin/news/create');

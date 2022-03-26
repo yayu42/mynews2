@@ -23,7 +23,7 @@ class ProfileController extends Controller
       $this->validate($request, Profile::$rules);
       
       $profile = new Profile;
-      $form = $request->all();
+      $profile_form = $request->all();
       
       if (isset($form['image'])) {
           $path = Storage::disk('s3')->putFile('/',$profile_form['image'],'public');
@@ -33,12 +33,12 @@ class ProfileController extends Controller
       }
       
       //フォームから送信されてきた_tokenを削除する
-      unset($form['_token']);
+      unset($profile_form['_token']);
       //フォームから送信されてきたimageを削除する
-      unset($form['image']);
+      unset($profile_form['image']);
       
       //データベースに保存する
-      $profile->fill($form);
+      $profile->fill($profile_form);
       $profile->save();
       
 
@@ -81,7 +81,7 @@ class ProfileController extends Controller
           $profile_form['image_path'] = null;
       } elseif ($request->file('image')) {
           $path = Storage::disk('s3')->putFile('/',$profile_form['image'],'public');
-          $profile_form['image_path'] = Storage::disk('s3')->url($path);
+          $profile->image_path = Storage::disk('s3')->url($path);
       } else {
           $profile_form['image_path'] = $profile->image_path;
       }
